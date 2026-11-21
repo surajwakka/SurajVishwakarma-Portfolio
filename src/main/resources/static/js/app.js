@@ -39,18 +39,50 @@ $('#terminalForm').addEventListener('submit', e=>{
 });
 
 const toast = msg => { const el=$('#toast'); el.textContent=msg; el.classList.add('show'); setTimeout(()=>el.classList.remove('show'),2800); };
-$('#contactForm').addEventListener('submit', async e=>{
-  e.preventDefault(); const form=e.currentTarget, button=$('.form-submit',form), status=$('#formStatus');
-  button.disabled=true; button.textContent='Sending…';
-  const payload=Object.fromEntries(new FormData(form).entries());
-  try{
-    const response=await fetch('/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
-    const data=await response.json();
-    if(!response.ok) throw new Error(data.message || 'Please check the form and try again.');
-    status.textContent=data.message+' This demo does not send email yet.';
-    form.reset(); toast('Message received by the portfolio API.');
-  }catch(err){status.textContent=err.message || 'Could not reach the Java API. Please email me directly.';}
-  finally{button.disabled=false;button.innerHTML='Send a message <span>↗</span>';}
+$('#contactForm').addEventListener('submit', async e => {
+  e.preventDefault();
+  const form = e.currentTarget;
+  const button = $('.form-submit', form);
+  const status = $('#formStatus');
+  const payload = Object.fromEntries(new FormData(form).entries());
+
+  // FormSubmit's honeypot field helps filter basic automated spam.
+  if (payload._honey) return;
+
+  payload._subject = 'New portfolio enquiry from ' + (payload.name || 'website visitor');
+  payload._template = 'table';
+  payload._captcha = 'true';
+  payload._replyto = payload.email;
+
+  button.disabled = true;
+  button.textContent = 'Sending…';
+  status.textContent = 'Sending your message securely…';
+
+  try {
+    const response = await fetch('https://formsubmit.co/ajax/sharmasurajvishwakarma@gmail.com', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify(payload)
+    });
+
+    let data = {};
+    try { data = await response.json(); } catch (_) {}
+    if (!response.ok || data.success === 'false' || data.success === false) {
+      throw new Error(data.message || 'The email provider could not accept your message. Please email me directly.');
+    }
+
+    status.textContent = 'Thanks! Your message has been submitted. I’ll get back to you soon.';
+    form.reset();
+    toast('Your message has been sent.');
+  } catch (err) {
+    status.textContent = err.message || 'Could not send your message. Please email sharmasurajvishwakarma@gmail.com directly.';
+  } finally {
+    button.disabled = false;
+    button.innerHTML = 'Send a message <span>↗</span>';
+  }
 });
 
 // Three.js holographic portrait stage. The uploaded portrait remains visible as a graceful fallback.

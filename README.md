@@ -1,4 +1,4 @@
-# Suraj Vishwakarma - Portfolio
+# Suraj Vishwakarma — Interactive Java Portfolio
 
 A responsive, gamified developer portfolio powered by **Java 17 + Spring Boot 3**. The frontend is HTML/CSS/vanilla JavaScript with a Three.js holographic 3D layer.
 
@@ -57,3 +57,46 @@ The homepage includes a featured `#30DaysOfJava` section immediately after Proje
 ## Expanded technology inventory
 
 The interactive skills inventory is organised into five groups: Java & Spring, Angular & Frontend, Data & Quality, AWS & DevOps, and AI & Claude. It includes the requested ecosystem technologies and concepts (including Spring AI, Amazon Bedrock, RAG, vector search, Docker/Kubernetes, and testing tools). The section presents these as a technology toolkit / learning landscape, not as a claim of expert-level proficiency in every listed item.
+
+
+## Progressive Web App (PWA)
+
+This project can be installed from supported browsers as **Suraj Portfolio**.
+
+PWA files are served from the Spring Boot static root:
+- `src/main/resources/static/manifest.json` — app identity, display mode, colors, and icons.
+- `src/main/resources/static/service-worker.js` — app-shell precaching and offline fallback.
+- `src/main/resources/static/offline.html` — fallback page when a navigation cannot be reached.
+- `src/main/resources/static/images/app-icon-192.png` and `app-icon-512.png` — install icons.
+
+The service worker caches the portfolio shell, stylesheet, JavaScript, portrait, app icons, and résumé. It uses network-first navigation and cache-first static assets. Third-party Google Analytics and Google Fonts requests are not intercepted. Analytics remains configured in `index.html` with Measurement ID `G-Z3CFLXS6WL`; page-view reporting requires a network connection.
+
+After deploying over HTTPS, open the site in a supported browser and choose **Install app** or **Add to Home Screen**. On iOS, use Safari's Share menu and choose **Add to Home Screen**. Offline use is limited to resources previously cached; live contact/API submissions and external links require connectivity.
+
+
+## Casual copy-protection deterrents
+
+The frontend discourages ordinary text selection, right-click context menus, copy/cut,
+image dragging, and common DevTools/source-view keyboard shortcuts. Form controls and
+elements marked with `data-allow-copy` or `.selectable` remain selectable/editable.
+
+These measures are deterrents, not security controls. Browser developer tools, network
+requests, screenshots, OCR, and other methods can still retrieve or reproduce content
+delivered to a visitor's device. Do not store secrets in static frontend files.
+
+
+## Contact form email delivery
+
+The contact form uses FormSubmit's free AJAX endpoint and sends submissions to
+`sharmasurajvishwakarma@gmail.com`. On the first submission, FormSubmit may send
+an activation/confirmation email to that inbox. Open it and confirm the activation
+before expecting subsequent visitor messages to be delivered. No SMTP password or
+API secret is stored in the frontend. The form uses a honeypot field and FormSubmit's
+CAPTCHA option; delivery depends on the third-party provider and an internet connection.
+
+## Course Management System source
+
+The Course Management System project card links to:
+https://github.com/surajwakka/JFS-Project-CG
+
+The hero portrait's “TO INTERACT” link now scrolls to the “LET'S CONNECT” contact section.

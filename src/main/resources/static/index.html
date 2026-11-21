@@ -11,9 +11,16 @@
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#090d13">
-  <meta name="description" content="Suraj Vishwakarma - Java Full Stack Developer building reliable enterprise applications and thoughtful digital products.">
-  <title>Suraj Vishwakarma - Portfolio</title>
+  <meta name="theme-color" content="#050d20">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Suraj Portfolio">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/app-icon-192.png">
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+  <meta name="description" content="Suraj Vishwakarma — Java Full Stack Developer building reliable enterprise applications and thoughtful digital products.">
+  <title>Suraj Vishwakarma — Java Full Stack Developer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -60,7 +67,7 @@
         </div>
         <div class="floating-chip chip-java"><span class="chip-icon">☕</span><div><b>Java</b><small>Backend craft</small></div></div>
         <div class="floating-chip chip-cloud"><span class="chip-icon">☁</span><div><b>AWS</b><small>Cloud mindset</small></div></div>
-        <div class="visual-label label-bottom">MOVE YOUR CURSOR <span>TO INTERACT ↗</span></div>
+        <a class="visual-label label-bottom interact-link" href="#contact" aria-label="Go to the Let’s Connect contact section">MOVE YOUR CURSOR <span>TO INTERACT ↗</span></a>
       </div>
     </section>
 
@@ -98,10 +105,10 @@
           <div class="project-art stay-art"><div class="stay-sun"></div><div class="stay-building"><i></i><i></i><i></i><i></i><i></i><i></i></div><span class="art-tag">03 / HOSPITALITY</span><div class="stay-copy">FIND YOUR<br><b>SOMEWHERE.</b></div></div>
           <div class="project-info"><div><span class="project-type">TRAVEL · STAYS · WEB APP</span><h3>Staywise <span>↗</span></h3><p>A hotel discovery and booking web experience designed to make finding a place to stay feel simple and welcoming.</p></div><div class="project-foot"><span>Explore live project</span><span class="arrow-circle">↗</span></div></div>
         </a>
-        <article class="project-card">
+        <a class="project-card" href="https://github.com/surajwakka/JFS-Project-CG" target="_blank" rel="noopener noreferrer" aria-label="View Course Management System source code on GitHub">
           <div class="project-art course-art"><div class="course-stack"><span>COURSE</span><span>ASSOCIATE</span><span>ADMISSION</span></div><span class="art-tag">04 / MICROSERVICES</span><div class="course-caption">ONE PLATFORM.<br><b>THREE SERVICES.</b></div></div>
-          <div class="project-info"><div><span class="project-type">JAVA · SPRING BOOT · ANGULAR</span><h3>Course Management System</h3><p>A modular microservices platform using Eureka, API Gateway, JWT role-based access, PayPal integration, Swagger, and Angular.</p></div><div class="project-foot"><span>Personal full-stack project</span><span class="arrow-circle">⌘</span></div></div>
-        </article>
+          <div class="project-info"><div><span class="project-type">JAVA · SPRING BOOT · ANGULAR</span><h3>Course Management System</h3><p>A modular microservices platform using Eureka, API Gateway, JWT role-based access, PayPal integration, Swagger, and Angular.</p></div><div class="project-foot"><span>View source on GitHub</span><span class="arrow-circle">↗</span></div></div>
+        </a>
       </div>
     </section>
 
@@ -196,12 +203,23 @@
 
     <section class="section-shell contact-section" id="contact">
       <div class="contact-left"><span class="section-kicker">07 — YOUR MOVE</span><h2>Have a good<br>problem to <span class="gradient-text">solve?</span></h2><p>I'm always interested in thoughtful products, challenging engineering problems, and conversations with people who love building things.</p><a class="email-link" href="mailto:sharmasurajvishwakarma@gmail.com">sharmasurajvishwakarma@gmail.com <span>↗</span></a><div class="social-links"><a href="https://www.linkedin.com/in/surajvishwakarma99" target="_blank" rel="noreferrer">LinkedIn ↗</a><a href="https://github.com/surajwakka" target="_blank" rel="noreferrer">GitHub ↗</a></div></div>
-      <form class="contact-form" id="contactForm"><div class="form-heading"><span>LET'S CONNECT</span><span class="form-spark">✳</span></div><label>Your name<input name="name" required maxlength="80" placeholder="How should I call you?"></label><label>Your email<input name="email" type="email" required maxlength="160" placeholder="you@example.com"></label><label>Your message<textarea name="message" required maxlength="2000" rows="4" placeholder="Tell me what you're thinking..."></textarea></label><button class="button button-primary form-submit" type="submit">Send a message <span>↗</span></button><p class="form-status" id="formStatus" aria-live="polite">The form demo uses the Java API. Email delivery needs a mail provider connection.</p></form>
+      <form class="contact-form" id="contactForm"><div class="form-heading"><span>LET'S CONNECT</span><span class="form-spark">✳</span></div><label>Your name<input name="name" required maxlength="80" placeholder="How should I call you?"></label><label>Your email<input name="email" type="email" required maxlength="160" placeholder="you@example.com"></label><label>Your message<textarea name="message" required maxlength="2000" rows="4" placeholder="Tell me what you're thinking..."></textarea></label><button class="button button-primary form-submit" type="submit">Send a message <span>↗</span></button><input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" class="form-honeypot">
+        <p class="form-status" id="formStatus" aria-live="polite">Send a message directly to my inbox. Your email address will only be used to reply.</p></form>
     </section>
   </main>
 
   <footer class="footer"><a class="brand" href="#home"><span class="brand-mark">S<span>.</span></span><span>suraj<span class="muted">.dev</span></span></a><span>Designed & built with curiosity. © <span id="year"></span> Suraj Vishwakarma</span><a href="#home">BACK TO TOP ↑</a></footer>
   <div class="toast" id="toast"></div>
   <script type="module" src="/js/app.js"></script>
+
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register("/service-worker.js")
+          .catch((error) => console.warn("PWA service worker registration failed:", error));
+      });
+    }
+  </script>
+  <script src="/js/protection.js" defer></script>
 </body>
 </html>
