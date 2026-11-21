@@ -1,4 +1,4 @@
-# Suraj Vishwakarma — Interactive Java Portfolio
+# Suraj Vishwakarma - Portfolio
 
 A responsive, gamified developer portfolio powered by **Java 17 + Spring Boot 3**. The frontend is HTML/CSS/vanilla JavaScript with a Three.js holographic 3D layer.
 
