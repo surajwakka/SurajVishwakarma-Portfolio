@@ -1,4 +1,4 @@
-const CACHE_VERSION = "suraj-portfolio-v3";
+const CACHE_VERSION = "suraj-portfolio-v4";
 const APP_CACHE = `${CACHE_VERSION}-app`;
 const RUNTIME_CACHE = `${CACHE_VERSION}-runtime`;
 
